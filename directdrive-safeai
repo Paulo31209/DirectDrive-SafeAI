@@ -1,0 +1,17 @@
+directdrive-safeai/
+├── README.md
+├── docs/
+│   ├── 01-visao-geral.md
+│   ├── 02-problema-e-objetivos.md
+│   ├── 03-arquitetura-do-sistema.md
+│   ├── 04-funcionamento-do-safeai.md
+│   ├── 05-tecnologias-e-stack.md
+│   ├── 06-diferenciais-e-impacto-social.md
+│   ├── 07-modelo-de-negocio.md
+│   ├── 08-privacidade-e-etica.md
+│   ├── 09-roadmap-2026.md
+│   └── 10-casos-de-uso.md
+├── diagrams/
+│   ├── arquitetura-geral.png
+│   └── fluxo-alertas.png
+└── LICENSE
