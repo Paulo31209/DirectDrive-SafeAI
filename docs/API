@@ -1,0 +1,199 @@
+📄 README.md — DirectDrive SafeAI (MVP)
+# 🚗 DirectDrive SafeAI
+
+Sistema Inteligente de Monitoramento Preventivo de Motoristas
+
+O DirectDrive SafeAI é uma solução baseada em Inteligência Artificial embarcada (Edge AI) para detecção de fadiga, sonolência e comportamentos de risco em tempo real.
+
+Este repositório contém a estrutura inicial do MVP (Minimum Viable Product).
+
+---
+
+# 🎯 Objetivo do MVP
+
+Validar a detecção de fadiga do motorista utilizando:
+
+- Câmera frontal (smartphone ou dispositivo)
+- Processamento local (Edge AI)
+- Alertas em tempo real
+- Registro de eventos básicos
+
+---
+
+# ⚙️ Funcionalidades do MVP
+
+## 🚨 Detecção em tempo real
+- Detecção de rosto
+- Detecção de olhos (aberto/fechado)
+- Identificação de sonolência
+- Alerta sonoro local
+
+## 📡 Registro de eventos
+- Envio de eventos para backend
+- Registro de:
+  - Timestamp
+  - Tipo de evento (fadiga, distração)
+  - Intensidade
+
+## 📍 Localização (opcional)
+- Captura de GPS do dispositivo
+
+---
+
+# 🧠 Stack Tecnológica
+
+## 📱 Aplicação (Edge AI)
+- Android (Kotlin ou Flutter)
+- MediaPipe (detecção facial)
+- OpenCV (processamento de imagem)
+- TensorFlow Lite (execução local)
+
+## 🌍 Mapas
+- OpenStreetMap
+- Leaflet.js
+
+## 📍 Endereço
+- ViaCEP (consulta de CEP)
+
+## 🧾 CPF
+- Validação local (algoritmo)
+- NÃO utiliza APIs externas por questões legais (LGPD)
+
+## ☁️ Backend
+- Python + FastAPI
+- PostgreSQL (via Supabase ou local)
+
+## 🔔 Notificações
+- Firebase Cloud Messaging
+
+---
+
+# 🏗️ Arquitetura
+
+
+[ Câmera ]
+↓
+[ App Android (Edge AI) ]
+↓
+[ Detecção em tempo real ]
+↓
+[ Alerta sonoro ]
+↓
+[ Evento JSON ]
+↓
+[ API FastAPI ]
+↓
+[ Banco de dados PostgreSQL ]
+↓
+[ Dashboard Web ]
+
+
+---
+
+# 📦 Estrutura do Projeto
+
+
+directdrive-safeai/
+│
+├── mobile/ # Aplicativo Android
+├── backend/ # API FastAPI
+├── dashboard/ # Interface web
+├── docs/ # Documentação
+└── README.md
+
+
+---
+
+# 🔌 Integrações (APIs)
+
+## 🗺️ Mapas
+- OpenStreetMap (gratuito)
+
+## 📦 Endereço
+- ViaCEP
+
+https://viacep.com.br/ws/{CEP}/json/
+
+
+## 🔔 Notificações
+- Firebase Cloud Messaging
+
+---
+
+# 🧮 Validação de CPF (Local)
+
+O sistema implementa validação de CPF localmente, verificando:
+
+- Formato válido
+- Dígitos verificadores
+
+⚠️ Não valida existência do CPF (somente estrutura)
+
+---
+
+# 🚀 Como Rodar o Projeto
+
+## Backend (FastAPI)
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+Mobile
+cd mobile
+# Abrir no Android Studio ou Flutter
+📡 Exemplo de Evento (JSON)
+{
+  "driver_id": "123",
+  "timestamp": "2026-01-01T12:00:00Z",
+  "event": "drowsiness",
+  "confidence": 0.87,
+  "location": {
+    "lat": -23.5505,
+    "lng": -46.6333
+  }
+}
+🔒 Privacidade
+Processamento local prioritário
+Não grava vídeo contínuo
+Apenas eventos são enviados
+Sistema focado em prevenção
+🗺️ Roadmap
+Fase 1 (MVP)
+ Detecção de rosto
+ Detecção de olhos
+ Alerta sonoro
+ Envio de eventos
+Fase 2
+ Backend estruturado
+ Banco de dados
+ Histórico de eventos
+Fase 3
+ Dashboard web
+ Score de risco
+Fase 4
+ Testes com usuários reais
+👤 Autor
+
+Paulo Itelo
+Fundador – DirectDrive
+
+⚠️ Aviso
+
+Este projeto está em fase inicial (MVP) e tem foco em validação técnica e de mercado.
+
+
+---
+
+# 💡 Próximo passo (recomendado)
+
+Se você quiser deixar isso ainda mais forte, posso te ajudar a criar:
+
+- ✅ Estrutura real de pastas (com código base)
+- ✅ API FastAPI pronta
+- ✅ App Android inicial com câmera
+- ✅ Script de validação de CPF
+- ✅ Integração ViaCEP funcionando
+
+Só fala:  
+👉 **"quero o código base completo"** que eu te monto tudo já pronto pra rodar.
